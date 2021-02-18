@@ -11,6 +11,7 @@ import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
 const fs = require('fs');
 const path = require('path');
+import copy from 'rollup-plugin-copy';
 
 
 dotenv.config();
@@ -52,13 +53,18 @@ export default {
             __MODE: JSON.stringify(process.env.__MODE),
             __deployRoot: JSON.stringify(process.env.__deployRoot),
             __COMMIT_DETAILS: x,
-            __ROOT__: production? 'https://imi-engage-wc-dev.netlify.app/': ''
+            __ROOT__: production? 'https://imi-engage-wc-dev.netlify.app/': '',
+            'process.env.NODE_ENV': JSON.stringify( 'production' )
         }),
-        function a(){
-            setTimeout(()=>{
-                console.log("SANDEEP", JSON.stringify(process.env));
-            })
-        },
+        copy({
+            targets: [
+                { src: `node_modules/@momentum-ui/icons/fonts`, dest: `public/` },
+                { src: `node_modules/@momentum-ui/icons/fonts`, dest: `public/icons/` },
+                { src: `node_modules/@momentum-ui/icons/css/momentum-ui-icons.css`, dest: `public/css` },
+                { src: `node_modules/@momentum-ui/icons/css/momentum-ui-icons.min.css`, dest: `public/css` },
+                { src: `node_modules/@momentum-ui/core/css/momentum-ui.css`, dest: `public/css` },
+            ]
+        }),
         json(),
         svelte({
             // enable run-time checks when not in production
