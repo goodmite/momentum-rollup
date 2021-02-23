@@ -2,7 +2,7 @@
   "name": "imi-chat-preview",
   "version": "0.0.23",
   "scripts": {
-    "start": "node lang.js && browser-sync public --no-ghost-mode",
+    "start": "node lang.js && browser-sync public --no-ghost-mode --port 3001",
     "env:sharable": "node env-script.js __IS_EMBED_MODE=false",
     "env:sharable:prod": "node env-script.js __IS_EMBED_MODE=false __prod=true",
     "env:embed": "node env-script.js __IS_EMBED_MODE=true __MODE=embed_mode __deployRoot=http://localhost:5000",
@@ -48,10 +48,11 @@
     "svelte-preprocess": "^4.0.10"
   },
   "dependencies": {
-    "@momentum-ui/core": "^19.9.12",
-    "@momentum-ui/icons": "^7.54.0",
+    "@momentum-ui/core": "19.9.12",
+    "@momentum-ui/icons": "7.54.0",
+    "@momentum-ui/tokens": "1.5.0",
     "@momentum-ui/utils": "^6.2.7",
-    "@momentum-ui/web-components": "2.1.1",
+    "@momentum-ui/web-components": "2.0.14",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@rollup/plugin-json": "^4.1.0",
@@ -64,7 +65,6 @@
     "simple-git": "^2.31.0",
     "svelte-i18n": "^3.3.0",
     "svelte-infinite-scroll": "^1.5.2",
-    "@momentum-ui/tokens": "1.5.0",
     "lit-element": "2.3.1"
   },
   "main": "public/build/bundle.js"

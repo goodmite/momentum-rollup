@@ -4,18 +4,44 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src='/build/bundle.js'></script>
-    <link rel="stylesheet" type="text/css" href="css/momentum-ui-icons.min.css" />
-<!--    <link rel="stylesheet" type="text/css" href="css/momentum-ui.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/momentum-ui-icons.min.css"/>
+    <!--    <link rel="stylesheet" type="text/css" href="css/momentum-ui.css" />-->
 
 </head>
 
 
 <body>
-    <md-button>hello</md-button>
-    <md-icon name="arrow-up_16"></md-icon>
-    <md-icon name="icon-arrow-up_16"></md-icon>
-    <md-icon name="icon-response_16"></md-icon>
-    <md-icon name="response_16"></md-icon>
-    <md-icon name="reset_16"></md-icon>
+
+
+<md-theme class="theme-toggle" id="tabs" darkTheme="false" lumos="true">
+
+    <md-tabs class="md-tabs" selected="2" justified>
+        <md-tab slot="tab" label="0">
+            <md-icon name="recents_16"></md-icon>
+            <span>Tab 1</span>
+        </md-tab>
+        <md-tab-panel slot="panel" label="1">
+            <span>Content for "First Tab"</span>
+        </md-tab-panel>
+
+        <md-tab slot="tab" label="2">
+            <md-icon name="apps_16"></md-icon>
+            <span>Tab 2</span>
+        </md-tab>
+        <md-tab-panel slot="panel">
+            <span>Content for "Second Tab"</span>
+        </md-tab-panel>
+
+        <md-tab slot="tab" label="2">
+            <md-icon name="alarm_16"></md-icon>
+            <span>Tab 3</span>
+        </md-tab>
+        <md-tab-panel slot="panel">
+            <span>Content for "Third Tab"</span>
+        </md-tab-panel>
+    </md-tabs>
+
+</md-theme>
+
 </body>
 </html>
